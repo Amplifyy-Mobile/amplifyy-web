@@ -1,29 +1,24 @@
-import React, {useEffect, useState} from 'react'
-import { Navbar } from './components'
-import { useLocation } from 'react-router'
-import { UserInterestProvider } from './contexts/userInterestContext'
-import Routes from './Routes'
-
+import React, { useEffect, useState } from "react";
+import { Navbar } from "./components";
+import { useLocation } from "react-router";
+import { UserInterestProvider } from "./contexts/userInterestContext";
+import Routes from "./Routes";
 
 const App = () => {
-  const location = useLocation()
+  const location = useLocation();
   const navBarFreeLocations = {
-    "/" : "/",
-    "/Start" : "/Start"
-  }
+    "/": "/",
+    "/Start": "/Start",
+  };
 
   return (
-
-      <div className="App">
+    <div className="App">
       <UserInterestProvider>
-      <Routes />
-      {!navBarFreeLocations[location.pathname]  &&
-      <Navbar />
-       }
+        <Routes />
+        {!navBarFreeLocations[location.pathname] && <Navbar />}
       </UserInterestProvider>
     </div>
-  )
+  );
+};
 
-}
-
-export default App
+export default App;
